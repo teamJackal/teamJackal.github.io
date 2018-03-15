@@ -1,0 +1,13 @@
+#header {
+    background-color: #233C15 !important;
+    position: relative;
+}
+
+#header-text {
+    font-size: 50px;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    width: 100%;
+    color: white;
+}
