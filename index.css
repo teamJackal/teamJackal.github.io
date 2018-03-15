@@ -11,3 +11,11 @@
     width: 100%;
     color: white;
 }
+
+#back-button {
+    background: #FFB07C;
+    border-color: transparent;
+    color: black;
+    position: absolute;
+    top: 5%;
+}
