@@ -10,10 +10,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
 <style>
-#siren {
-   display: inline-block;
+.inline-block {
+    display: inline-block;
 }
 </style>
+
 <body style="background-color: #EAABAB;">
 
 <div id="header" class="container-fluid" style="background-color: #C6401B !important;">
@@ -28,20 +29,28 @@
 
 <div id="body" class="container center">
   
-    <div id="siren">
+    <div class="inline-block">
 	  <img src="images/siren.png" style="width:200px; height: 50px;">
       <button id="warning-sirens" type="button" onclick="window.location.href=''" class="btn btn-block btn-info">Warning Sirens</button>
 	</div>
 	  <br>
 	  <br>
+	<div class="inline-block">
+	  <img src="images/phone.png" style="width: 200px; height: 50px;">
 	  <button id="text-message" type="button" onclick="window.location.href=''" class="btn btn-block btn-info">Text Message</button>
+	</div>
 	  <br>
 	  <br>
+	<div class="inline-block">
+	  <img src="images/radio.png" style="width: 200px; height: 50px;">
 	  <button id="audio-warning" type="button" onclick="window.location.href=''" class="btn btn-block btn-info">Audio Warning-Radio</button>
+	</div>
 	  <br>
 	  <br>
+	<div class="inline-block">  
+	  <img src="images/tv.png" style="width: 200px; height: 50px;">
 	  <button id="tv" type="button" onclick="window.location.href=''" class="btn btn-block btn-info">Audio & Visual Warning TV</button>
-    
+    </div>
   
 </div>
 
