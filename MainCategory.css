@@ -24,14 +24,24 @@
 }
 
 #NaturalButton {
-    background-color: white;
+    color: black;
+    background-color: #F9F9F9;
     font-size: 400%;
     margin-bottom: 1%;
 }
 
+#NaturalButton:hover {
+    background-color: #C6C6C6;
+}
+
 #ManButton {
-    background-color: white;
+    color: black;
+    background-color: #F9F9F9;
     font-size: 400%
+}
+
+#ManButton:hover {
+    background-color: #C6C6C6;
 }
 
 .btn-block {
