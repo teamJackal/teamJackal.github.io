@@ -1,0 +1,48 @@
+#header {
+  position: relative;
+}
+
+#header-text {
+  font-size: 50px;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  color: white;
+}
+
+#back-button {
+  background: #FFB07C;
+  border-color: transparent;
+  color: black;
+  position: absolute;
+  top: 5%;
+}
+
+#body {
+  margin-top: -0.5%;
+}
+
+
+.btn-block {
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+#confirmButton {
+  font-size:400%;
+  position:relative;
+  left:25%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#cancelButton {
+  font-size: 400%;
+  position:relative;
+  left:50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
