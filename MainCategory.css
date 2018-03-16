@@ -1,5 +1,4 @@
 #header {
-    background-color: #233C15 !important;
     position: relative;
 }
 
@@ -24,30 +23,18 @@
     margin-top: -0.5%;
 }
 
-#testButton {
-    background-color: green;
+#NaturalButton {
+    background-color: white;
     font-size: 400%;
     margin-bottom: 1%;
 }
 
-#testButton:hover {
-    background-color: #00910C;
-}
-
-#realButton {
-    background-color: #D8000E;
+#ManButton {
+    background-color: white;
     font-size: 400%
-}
-
-#realButton:hover {
-    background-color: red;
 }
 
 .btn-block {
     padding-bottom: 5%;
     padding-top: 5%;
-}
-
-body {
-    background: #95C19B;
 }
