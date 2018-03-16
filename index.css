@@ -26,7 +26,7 @@
 
 #testButton {
     background-color: green;
-    font-size: 400%;
+    font-size: 300%;
     margin-bottom: 1%;
 }
 
@@ -36,16 +36,27 @@
 
 #realButton {
     background-color: #D8000E;
-    font-size: 400%
+    font-size: 300%;
+    margin-bottom: 1%;
 }
 
 #realButton:hover {
     background-color: red;
 }
 
+#cancelButton {
+    background-color: #3596FF;
+    font-size: 300%;
+    margin-bottom: 1%;
+}
+
+#cancelButton:hover {
+    background-color: #60ADFF;
+}
+
 .btn-block {
-    padding-bottom: 5%;
-    padding-top: 5%;
+    padding-bottom: 2.5%;
+    padding-top: 2.5%;
 }
 
 body {

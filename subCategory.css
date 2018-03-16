@@ -25,24 +25,25 @@
 
 
 .btn-block {
-  padding-bottom: 5%;
-  padding-top: 5%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  font-size: 300%;
 }
 
 #confirmButton {
-  font-size:400%;
+  font-size:200%;
   position:relative;
-  left:25%;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  display:inline-block;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 #cancelButton {
-  font-size: 400%;
+  font-size: 200%;
   position:relative;
-  left:50%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-
+  display:inline-block;
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 

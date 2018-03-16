@@ -26,7 +26,7 @@
 #NaturalButton {
     color: black;
     background-color: #F9F9F9;
-    font-size: 400%;
+    font-size: 300%;
     margin-bottom: 1%;
 }
 
@@ -37,7 +37,7 @@
 #ManButton {
     color: black;
     background-color: #F9F9F9;
-    font-size: 400%
+    font-size: 300%
 }
 
 #ManButton:hover {
@@ -45,6 +45,6 @@
 }
 
 .btn-block {
-    padding-bottom: 5%;
-    padding-top: 5%;
+    padding-bottom: 4.5%;
+    padding-top: 4.5%;
 }

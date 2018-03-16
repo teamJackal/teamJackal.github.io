@@ -1,31 +1,55 @@
-#warning-sirens {
-   background: url(images/siren.png) no-repeat left;
-   background-color: #5bc0de;
-   background-position: 0px 0px;
-   background-size: 90px;
-   background-repeat: no-repeat;
+#header {
+  position: relative;
 }
 
-#text-message {
-   background: url(images/phone.png) no-repeat left;
-   background-color: #5bc0de;
-   background-position: 0px 0px;
-   background-size: 65px;
-   background-repeat: no-repeat;
+#header-text {
+  font-size: 50px;
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  color: white;
 }
 
-#audio-warning {
-   background: url(images/radio.png) no-repeat left;
-   background-color: #5bc0de;
-   background-position: 0px 0px;
-   background-size: 75px;
-   background-repeat: no-repeat;	
+#back-button {
+  background: #FFB07C;
+  border-color: transparent;
+  color: black;
+  position: absolute;
+  top: 5%;
 }
 
-#tv {
-   background: url(images/tv.png) no-repeat left;
-   background-color: #5bc0de;
-   background-position: -20px 0px;
-   background-size: 120px;
-   background-repeat: no-repeat;	
+#body {
+  margin-top: -0.5%;
+}
+
+
+.btn-block {
+  padding-bottom: 1%;
+  padding-top: 1%;
+  font-size: 300%;
+  background-color: #56ECF7;
+}
+
+.icon {
+  max-height: 5%;
+  margin-left: 5%;
+  margin-right: -5%;
+}
+
+#confirmButton {
+  font-size:200%;
+  position:relative;
+  display:inline-block;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#cancelButton {
+  font-size: 200%;
+  position:relative;
+  display:inline-block;
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
