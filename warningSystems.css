@@ -45,6 +45,10 @@
   margin-bottom: 1%;
 }
 
+.check {
+    visibility: hidden;
+}
+
 #cancelButton {
   font-size: 200%;
   position:relative;
