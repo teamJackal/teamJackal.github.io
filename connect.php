@@ -1,9 +1,9 @@
 <?php
 
-    $servername = "localhost";
-    $username = "jleong8_jleong88";
-    $password = "22331387";
-    $dbname = "jleong8_missileAlert";
+    $servername = "mysqldb.cilyvfny7hgw.us-east-2.rds.amazonaws.com";
+    $username = "herm8888";
+    $password = "clement3794";
+    $dbname = "missileAlert";
     
      try {
         $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
