@@ -2,8 +2,8 @@
 
     $servername = "mysqldb.cilyvfny7hgw.us-east-2.rds.amazonaws.com";
     $username = "herm8888";
-    $password = "clement3794";
-    $dbname = "missileAlert";
+    $password = "23320144";
+    $dbname = "414jackal";
     
      try {
         $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
