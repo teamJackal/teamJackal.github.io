@@ -1,5 +1,6 @@
 {
     "require": {
-        "wildbit/postmark-php": "^2.5"
+        "wildbit/postmark-php": "^2.5",
+        "phpmailer/phpmailer": "^6.0"
     }
 }
