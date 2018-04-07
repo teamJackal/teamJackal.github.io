@@ -15,7 +15,7 @@ if(isset($_POST['action'])) {
     if($category == "Natural Disaster") {
         echo "<script type='text/javascript'>  window.location='subCategoryRealNd.php?id=".$employee_id."'; </script>";
     } else {
-        echo "<script type='text/javascript'>  window.location='subCategoryRealMM.php?id=".$employee_id."'; </script>";
+        echo "<script type='text/javascript'>  window.location='subCategoryRealNd.php?id=".$employee_id."'; </script>";
     }
 }
 
@@ -47,7 +47,7 @@ if(isset($_POST['action'])) {
     <h1 class="text-center">Test System</h1>
     <p class="text-center">Please select a category</p>
   </div>
-  <form action="MainCategoryTest.php" method="POST">
+  <form action="MainCategoryReal.php" method="POST">
       <input type="hidden" name="action" value="submit" />
       <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>	
   <button id="NaturalButton" type="submit" name="submit" value="Natural Disaster" class="btn btn-block btn-info">Natural Disaster</button>
