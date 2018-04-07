@@ -1,3 +1,5 @@
+<?php include('sendsms.php'); ?>
+<?php include('sendmail.php'); ?>
 <?php include('connect.php'); ?>
 
 <?php

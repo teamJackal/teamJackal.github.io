@@ -1,5 +1,5 @@
 <?php include('connect.php'); ?>
-<?
+<?php
 $employee_id = $_GET['id'];
 
 if(isset($_POST['confirmButton'])) {
