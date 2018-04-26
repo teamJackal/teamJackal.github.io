@@ -2,6 +2,6 @@
 <?php include('sendmail.php'); ?>
 
 <?
-$message = "helllo"l
+$message = "helllo";
 sendsms($message);
 ?>
