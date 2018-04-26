@@ -6,7 +6,7 @@
           "SenderID" => "TestMessage",
           "SMSType" => "Promotional",
           "Message" => $message,
-          "PhoneNumber" => "+1 808 393 8206"
+          "PhoneNumber" => "+1 808 429 0352"
       );
 
       $result = $sns->publish($args);
