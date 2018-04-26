@@ -9,7 +9,7 @@
           "PhoneNumber" => "+1 808 429 0352"
       );
 
-      $result = $sns->publish($args);
+      $result = $sms->publish($args);
    }
 
    sendsms("hello");
