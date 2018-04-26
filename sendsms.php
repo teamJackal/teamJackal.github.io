@@ -12,5 +12,5 @@
       $result = $sns->publish($args);
    }
 
-   sendsms("hello");
+//   sendsms("hello");
 ?>
