@@ -5,7 +5,7 @@
 $employee_id = $_GET['id'];
 
 $sql = "SELECT * FROM `employee_log` WHERE `employee_id` = '".$employee_id."' AND `lastUpdated` < (NOW() - INTERVAL 30 MINUTE) AND `sent` = 1";
-echo $sql;
+//echo $sql;
 $sel = $pdo->prepare($sql);
 $sel->execute();
 $result = $sel->fetchAll();
@@ -36,7 +36,7 @@ $result = $sel->fetchAll();
 </div>
 
 <div class="container-fluid">
-<?
+<?php
 
 $myFields = array("Category" => $row['category'],
                   "Sub Category"  => $row['sub_category']);
