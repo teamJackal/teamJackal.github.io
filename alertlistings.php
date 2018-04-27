@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<?
+$employee_id = $_GET['id'];
+
+$sql = "SELECT * FROM `books`";
+echo $sql;
+$sel = $pdo->prepare($sql);
+$sel->execute();
+$result = $sel->fetchAll();
+
+?>
+
 <html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,14 +34,3 @@
 <div class="container">
   <h1 class="text-center">Cancel Alert</h1>
 </div>
-
-<?
-$employee_id = $_GET['id'];
-
-$sql = "SELECT * FROM `employee_log` WHERE `employee_id` = '".$employee_id."'";
-echo $sql;
-$selectsql = $pdo->prepare($sql);
-$selectsql->execute();
-$result = $selectsql->fetchAll();
-
-?>
