@@ -54,7 +54,7 @@ $result = $sel->fetchAll();
   </button>
 </div>
 
-<div class="container-fluid" name="tablecontainer">
+<div class="container-fluid" id="tablecontainer">
 	<div id="live_data"></div>
 	<?php
 	echo
@@ -70,10 +70,11 @@ $result = $sel->fetchAll();
 	;
 	foreach($result as $row) {
 		echo "<tr>";
-		echo "<td id='building'><a href='update.php?id=".$row['id']."&name=".$row['building']."'>" . $row['building'] . "</a></td>";
-		echo "<td class='floor' onBlur=\"saveToDatabase(this,'floor', $row_id)\" contenteditable='true'>" . $row['floor'] . "</td>";
-		echo "<td class='lastCheck'>" . $row['lastCheck'] . "</td>";
-		echo "<td class='notes' onBlur=\"saveToDatabase(this,'notes', $row_id)\" contenteditable='true'>" . $row['notes'] . "</td>";
+		echo "<td class='category'>" . $row['category'] . "</td>";
+    echo "<td class='sub_category'>" . $row['sub_category'] . "</td>";
+		echo "<td class='warningType'>" . $row['warningType'] . "</td>";
+		echo "<td class='environmentType'>" . $row['environmentType'] . "</td>";
+    echo "<td class='warningMessage'>" . $row['warningMessage'] . "</td>";
 		echo "<td class='alnright'><a href='delete.php?id=".$row['id']."&name=".$row['building']."'>" . "x" . "</a></td>";
 		echo "</tr>";
 	}
