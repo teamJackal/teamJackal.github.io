@@ -8,7 +8,7 @@ if(isset($_POST['action'])) {
     $category = $_POST['submit'];
     $employee_id = $_POST['url_id'];
 
-    $sql = "INSERT INTO `employee_log` (`category`, `employee_id`) VALUES ('".$category."', '".$employee_id."')";
+    $sql = "INSERT INTO `employee_log` (`category`, `employee_id`, `environmentType`) VALUES ('".$category."', '".$employee_id."', "test")";
     //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
