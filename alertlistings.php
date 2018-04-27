@@ -1,6 +1,6 @@
 <?php include('connect.php'); ?>
 
-<?
+<?php
 
 $employee_id = $_GET['id'];
 
