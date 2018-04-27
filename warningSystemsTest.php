@@ -13,12 +13,12 @@ if(isset($_POST['confirmButton'])) {
 
     $warning_types = $warningSirens . "," . $textMessage . "," . $radio . "," . $tv;
 
-    $sql = "UPDATE `employee_log` SET `warningType` = '".$warning_types."', `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
-    echo $sql;
+    $sql = "UPDATE `employee_log` SET `warningType` = '".$warning_types."', `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` ASC LIMIT 1 ";
+    //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
 
-    //echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
+    echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
 }
 ?>
 

@@ -6,7 +6,7 @@ $employee_id = $_GET['id'];
 
 if(isset($_POST['back-button'])) {
     $employee_id = $_POST['url_id'];
-    
+
     $sql = "DELETE FROM `employee_log` WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1";
     //echo $sql;
     $sel = $pdo->prepare($sql);
@@ -16,11 +16,11 @@ if(isset($_POST['back-button'])) {
 }
 
 if(isset($_POST['submit'])) {
-    
+
     $employee_id = $_POST['url_id'];
-    
+
     $warning_type = $_POST['submit'];
-    
+
     $sql = "UPDATE `employee_log` SET `sub_category` = '".$warning_type."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
     //echo $sql;
     $sel = $pdo->prepare($sql);
@@ -48,7 +48,7 @@ if(isset($_POST['submit'])) {
     <div id="header-text">HAWAII EMERGENCY ALERT SYSTEM</div>
   </div>
   <form action="subCategoryTestNd.php" method="POST">
-      <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>	
+      <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
     <button id="back-button" name="back-button" type="submit" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> BACK
     </button>
