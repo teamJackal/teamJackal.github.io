@@ -1,12 +1,13 @@
 <?php include('connect.php'); ?>
 <?
+
 $employee_id = $_GET['id'];
 
 $sql = "SELECT * FROM `employee_log`";
 echo $sql;
-$sel = $pdo->prepare($sql);
-$sel->execute();
-$result = $sel->fetchAll();
+// $sel = $pdo->prepare($sql);
+// $sel->execute();
+// $result = $sel->fetchAll();
 
 ?>
 
