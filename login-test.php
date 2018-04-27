@@ -5,16 +5,21 @@
 if(isset($_POST['Submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
+
     $sql = "SELECT * FROM login_test WHERE username = '".$username."' AND password = '".$password."' LIMIT 1";
-    
+
     $sel = $pdo->prepare($sql);
     $sel->execute();
     //$result = $sel->fetchAll();
     while($res = $sel->fetch(PDO::FETCH_ASSOC)){
         $id = $res['employee_id'];
-        echo "<script type='text/javascript'>  window.location='MainCategoryTest.php?id=".$id."'; </script>";
+        //echo "<script type='text/javascript'>  window.location='MainCategoryTest.php?id=".$id."'; </script>";
     }
+
+    $sql2 = "DELETE FROM `employee_log` WHERE `category` is NULL OR `sub_category` is NULL or `warningType` is NULL or `environmentType` is NULL or `warningMessage` is NULL or `lastUpdated` is NULL or `employee_id` is NULL";
+    $sel2 = $pdo->prepare($sql2);
+    $sel2->execute();
+    echo "<script type='text/javascript'>  window.location='MainCategoryTest.php?id=".$id."'; </script>";
 }
 
 ?>
@@ -27,7 +32,7 @@ if(isset($_POST['Submit'])) {
   <link rel="stylesheet" href="stylesheets/login.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
 <body style="background: #95C19B;">
 
 
