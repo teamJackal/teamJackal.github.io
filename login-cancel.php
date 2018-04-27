@@ -51,7 +51,7 @@ if(isset($_POST['Submit'])) {
 
 <div id="body" class="container center">
   <div class="thumbnail text-center">
-    <form action="login-test.php" method="POST">
+    <form action="login-cancel.php" method="POST">
       <div class="form-group">
         <label for="exampleInputEmail1">Username</label>
         <input type="email" id="username" name="username" class="form-control" placeholder="Enter email">
