@@ -16,7 +16,7 @@ function removeNull($array) {
 
 function checkLocType($category){
     $state = TRUE;
-    if($category != 'Tsunami' || $category != 'Missile'){
+    if($category == 'Tsunami' || $category == 'Missile'){
         $state = FALSE;
     }
     return $state;
