@@ -16,16 +16,15 @@ if(isset($_POST['confirmButton'])) {
     $textMessage = $_POST['var_id'][1];
     $radio = $_POST['var_id'][2];
     $tv = $_POST['var_id'][3];
-    $warningMessage = $_POST['warningMessage'];
     
     $warning_types = $warningSirens . "," . $textMessage . "," . $radio . "," . $tv;
     
-    $sql = "UPDATE `employee_log` SET `warningType` = '".$warning_types."', `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
+    $sql = "UPDATE `employee_log` SET `warningType` = '".$warning_types."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
     //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
 
-    echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
+    echo "<script type='text/javascript'>  window.location='CustomizeAlarmReal.php?id=".$employee_id."'; </script>";
 }
 
 if(isset($_POST['back-button'])) {
