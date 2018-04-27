@@ -24,3 +24,12 @@
 <div class="container">
   <h1 class="text-center">Cancel Alert</h1>
 </div>
+
+<?
+
+$sql = "SELECT * FROM `employee_log` WHERE `lastUpdated` < (NOW() - INTERVAL 30 MINUTE);";
+echo $sql;
+$sel = $pdo->prepare($sql);
+$sel->execute();
+
+?>
