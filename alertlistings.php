@@ -27,7 +27,9 @@
 
 <?
 
-$sql = "SELECT * FROM employee_log ";
+$employee_id = $_GET['id'];
+
+$sql = "SELECT * FROM login_test WHERE `employee_id` = '".$employee_id"'";
 echo $sql;
 $sel = $pdo->prepare($sql);
 $sel->execute();
