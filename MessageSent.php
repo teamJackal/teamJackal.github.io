@@ -3,5 +3,5 @@
 
 <?
 $message = "helllo";
-sendsms($message);
+sendsms($message, $params);
 ?>
