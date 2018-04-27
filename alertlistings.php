@@ -36,30 +36,18 @@ $result = $sel->fetchAll();
 </div>
 
 <div class="container-fluid">
-	<div id="live_data"></div>
-	<?
-	echo
-	"<table border='0' cellpadding='0' cellspacing='0' line-height='22 px' align='center'>
-	<tr>
-		<th class='building'>Building</th>
-		<th class='floor'>Floor</th>
-		<th class='lastCheck'>lastCheck</th>
-		<th>Notes</th>
-		<th class='delete'>Delete</th>
-	</tr>"
-	;
-	foreach($result as $row) {
-		echo "<tr>";
-		echo "<td id='building'><a href='update.php?id=".$row['id']."&name=".$row['building']."'>" . $row['building'] . "</a></td>";
-		$row_id = $row["id"];
-		echo "<td class='floor' onBlur=\"saveToDatabase(this,'floor', $row_id)\" contenteditable='true'>" . $row['floor'] . "</td>";
-		echo "<td class='lastCheck'>" . $row['lastCheck'] . "</td>";
-		$row_id = $row["id"];
-		echo "<td class='notes' onBlur=\"saveToDatabase(this,'notes', $row_id)\" contenteditable='true'>" . $row['notes'] . "</td>";
-		echo "<td class='alnright'><a href='delete.php?id=".$row['id']."&name=".$row['building']."'>" . "x" . "</a></td>";
-		echo "</tr>";
-	}
-	?>
+<?
+
+$myFields = array("Category" => $row['category'],
+                  "Sub Category"  => $row['sub_category']);
+  echo '<table><tr>';
+
+  foreach($myFields as $field_title => $field_value)
+     echo '<td>', $field_title, '</td>
+           <td>', $field_value, '</td>';
+
+  echo '</tr></table>';
+?>
 </div>
 
 </html>
