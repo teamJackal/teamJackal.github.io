@@ -51,17 +51,8 @@ $result = $sel->fetchAll();
 		<th class='environmentType'>Environment Type</th>
     <th class='warningMessage'>Warning Message</th>
 		<th class='delete'>Delete</th>
-	</tr>"
-	;
-	foreach($result as $row) {
-		echo "<tr>";
-		echo "<td id='building'>$row['category']</td>";
-		// echo "<td class='floor' onBlur=\"saveToDatabase(this,'floor', $row_id)\" contenteditable='true'>" . $row['floor'] . "</td>";
-		// echo "<td class='lastCheck'>" . $row['lastCheck'] . "</td>";
-		// echo "<td class='notes' onBlur=\"saveToDatabase(this,'notes', $row_id)\" contenteditable='true'>" . $row['notes'] . "</td>";
-		// echo "<td class='alnright'><a href='delete.php?id=".$row['id']."&name=".$row['building']."'>" . "x" . "</a></td>";
-		echo "</tr>";
-	}
+	</tr>";
+
 	?>
 </div>
 
