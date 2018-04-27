@@ -7,16 +7,16 @@ $employee_id = $_GET['id'];
 if(isset($_POST['action'])) {
     $category = $_POST['submit'];
     $employee_id = $_POST['url_id'];
-    $environment_type = 'test';
+    $environment_type = '0';
 
     $sql = "INSERT INTO `employee_log` (`category`, `employee_id`, `environmentType`) VALUES ('".$category."', '".$employee_id."', '".$environment_type."')";
-    echo $sql;
+    //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
     if($category == "Natural Disaster") {
-    //    echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
+        echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
     } else {
-    //    echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
+        echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
     }
 
 }
