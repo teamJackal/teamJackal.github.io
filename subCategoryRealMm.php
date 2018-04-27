@@ -6,13 +6,7 @@ $employee_id = $_GET['id'];
 
 if(isset($_POST['back-button'])) {
     $employee_id = $_POST['url_id'];
-    
-    $sql = "DELETE FROM `employee_log` WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1";
-    //echo $sql;
-    $sel = $pdo->prepare($sql);
-    $sel->execute();
-    //header("location: index.html");
-    echo "<script type='text/javascript'>  window.location='index.html'; </script>";
+    echo "<script type='text/javascript'>  window.location='MainCategoryReal.php?id=$employee_id'; </script>";
 }
 
 if(isset($_POST['submit'])) {
@@ -47,7 +41,7 @@ if(isset($_POST['submit'])) {
     <img class="img-responsive fluid" src="images/HeaderBad.png">
     <div id="header-text">HAWAII EMERGENCY ALERT SYSTEM</div>
   </div>
-  <form action="subCategoryTestNd.php" method="POST">
+  <form action="subCategoryRealMm.php" method="POST">
       <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>	
     <button id="back-button" name="back-button" type="submit" class="btn btn-default btn-lg">
       <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> BACK

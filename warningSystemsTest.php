@@ -29,7 +29,7 @@ if(isset($_POST['confirmButton'])) {
 
 if(isset($_POST['back-button'])) {
   $employee_id = $_POST['url_id'];
-  echo "<script type='text/javascript'>  window.location='MainCategoryReal.php?id=$employee_id'; </script>";
+  echo "<script type='text/javascript'>  window.location='MainCategoryTest.php?id=$employee_id'; </script>";
 }
 ?>
 
@@ -50,9 +50,9 @@ if(isset($_POST['back-button'])) {
     <img class="img-responsive fluid" src="images/Header.png">
     <div id="header-text">HAWAII EMERGENCY ALERT SYSTEM</div>
   </div>
-  <form action="warningSystemsReal.php" method="POST">
+  <form action="warningSystemsTest.php" method="POST">
   <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
-  <button id="back-button" onclick="window.location.href='MainCategoryTest.php'" type="button" class="btn btn-default btn-lg">
+  <button id="back-button" name="back-button" type="submit" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> BACK
   </button>
   </form>

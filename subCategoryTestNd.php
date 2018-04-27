@@ -6,13 +6,7 @@ $employee_id = $_GET['id'];
 
 if(isset($_POST['back-button'])) {
     $employee_id = $_POST['url_id'];
-
-    $sql = "DELETE FROM `employee_log` WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1";
-    //echo $sql;
-    $sel = $pdo->prepare($sql);
-    $sel->execute();
-    //header("location: index.html");
-    echo "<script type='text/javascript'>  window.location='index.html'; </script>";
+    echo "<script type='text/javascript'>  window.location='MainCategoryTest.php?id=$employee_id'; </script>";
 }
 
 if(isset($_POST['submit'])) {
