@@ -26,12 +26,12 @@
 </div>
 
 <?
-
 $employee_id = $_GET['id'];
 
-$sql = "SELECT * FROM login_test WHERE `employee_id` = '".$employee_id"'";
+$sql = "SELECT * FROM `employee_log` WHERE `employee_id` = '".$employee_id."'";
 echo $sql;
-$sel = $pdo->prepare($sql);
-$sel->execute();
+$selectsql = $pdo->prepare($sql);
+$selectsql->execute();
+$result = $selectsql->fetchAll();
 
 ?>
