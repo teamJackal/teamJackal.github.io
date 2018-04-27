@@ -1,7 +1,8 @@
-<?php include('sendsms.php'); ?>
 <?php include('sendmail.php'); ?>
 
-<?
+<?php
+  include 'sendsms.php';
 
-sendsms("hello from messageSent", $params);
+  echo sendsms("hello from messageSent", $params);
+
 ?>
