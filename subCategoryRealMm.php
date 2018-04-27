@@ -62,7 +62,7 @@ if(isset($_POST['submit'])) {
     <p class="text-center"> Select a sub-category</p>
   </div>
   <div>
-  <form action="subCategoryRealNd.php" method="POST">
+  <form action="subCategoryRealMm.php" method="POST">
       <input type="hidden" name="action" value="submit" />
       <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
       <button id="amberAlertButton" type="submit" name="submit" value="Amber Alert" class="btn btn-block btn-info">Amber Alert</button>
