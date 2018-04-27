@@ -7,7 +7,7 @@ $employee_id = $_GET['id'];
 if(isset($_POST['action'])) {
     $category = $_POST['submit'];
     $employee_id = $_POST['url_id'];
-    
+
     $sql = "INSERT INTO `employee_log` (`category`, `employee_id`) VALUES ('".$category."', '".$employee_id."')";
     //echo $sql;
     $sel = $pdo->prepare($sql);
@@ -15,9 +15,9 @@ if(isset($_POST['action'])) {
     if($category == "Natural Disaster") {
         echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
     } else {
-        echo "<script type='text/javascript'>  window.location='subCategoryTestMM.php?id=".$employee_id."'; </script>";
+        echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
     }
-    
+
 }
 
 ?>
@@ -30,7 +30,7 @@ if(isset($_POST['action'])) {
   <link rel="stylesheet" href="stylesheets/MainCategory.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
 <body style="background: #95C19B;">
 
 <div id="header" style="background-color: #233C15 !important;" class="container-fluid">
@@ -50,7 +50,7 @@ if(isset($_POST['action'])) {
   </div>
   <form action="MainCategoryTest.php" method="POST">
       <input type="hidden" name="action" value="submit" />
-      <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>	
+      <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
   <button id="NaturalButton" type="submit" name="submit" value="Natural Disaster" class="btn btn-block btn-info">Natural Disaster</button>
   <button id="ManButton" type="submit" name="submit" value="Man-Made" class="btn btn-danger btn-block">Man-Made Disaster</button>
   </form>
@@ -58,4 +58,3 @@ if(isset($_POST['action'])) {
 
 </body>
 </html>
-
