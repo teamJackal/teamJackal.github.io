@@ -3,7 +3,8 @@
 
 $employee_id = $_GET['id'];
 
-
+$sql = "SELECT * FROM `employee_log`";
+echo $sql;
 ?>
 
 <html>
