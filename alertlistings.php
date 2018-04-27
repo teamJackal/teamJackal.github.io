@@ -27,8 +27,8 @@
 
 <?
 
-$sql = "SELECT * FROM `employee_log` WHERE `lastUpdated` < (NOW() - INTERVAL 30 MINUTE)";
-echo $sql; 
+$sql = "SELECT * FROM employee_log ";
+echo $sql;
 $sel = $pdo->prepare($sql);
 $sel->execute();
 
