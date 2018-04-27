@@ -2,6 +2,11 @@
 <?php
 $employee_id = $_GET['id'];
 
+$sql = "SELECT sub_category FROM 414jackal.employee_log ORDER BY `lastUpdated` DESC LIMIT 1";
+$sel = $pdo->prepare($sql);
+$output = $sel->execute();
+echo $output['sub_category'];
+
 if(isset($_POST['confirmButton'])) {
 
     $employee_id = $_POST['url_id'];
