@@ -4,8 +4,10 @@
 
 $employee_id = $_GET['id'];
 
-$sql = "SELECT * FROM `employee_log`";
+$sql = "SELECT * FROM `employee_log` WHERE `employee_id` = '".$employee_id."' AND WHERE `timestamp` < (NOW() - INTERVAL 30 MINUTE)";
 echo $sql;
+$sel = $pdo->prepare($sql);
+$sel->execute();
 ?>
 
 <!DOCTYPE html>
