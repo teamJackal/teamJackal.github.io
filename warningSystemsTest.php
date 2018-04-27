@@ -3,22 +3,22 @@
 $employee_id = $_GET['id'];
 
 if(isset($_POST['confirmButton'])) {
-    
+
     $employee_id = $_POST['url_id'];
     $warningSirens = $_POST['var_id'][0];
     $textMessage = $_POST['var_id'][1];
     $radio = $_POST['var_id'][2];
     $tv = $_POST['var_id'][3];
     $warningMessage = $_POST['warningMessage'];
-    
+
     $warning_types = $warningSirens . "," . $textMessage . "," . $radio . "," . $tv;
-    
+
     $sql = "UPDATE `employee_log` SET `warningType` = '".$warning_types."', `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
-    //echo $sql;
+    echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
 
-    echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
+    //echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
 }
 ?>
 
@@ -52,7 +52,7 @@ if(isset($_POST['confirmButton'])) {
   </div>
 
   <form action="warningSystemsTest.php" method="POST">
-    <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>	
+    <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
   <button data-toggle="buttons" id="hide" type="button" class="btn btn-block btn-info toggle">
     <input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="warningSirens">
     <span><img class="icon glyphicon pull-left" src="images/siren.png"></span>
@@ -73,8 +73,8 @@ if(isset($_POST['confirmButton'])) {
     <span><img class="icon glyphicon pull-left" src="images/tv.png"></span>
     Audio & Visual Warning - TV
   </button>
-  
-  
+
+
   <div id="message">
       <h2>Enter a message:</h2>
   <textarea name="warningMessage" id="warningMessage" rows="4" cols="50">
@@ -97,9 +97,9 @@ if(isset($_POST['confirmButton'])) {
                   $("#message").hide();
                 });
         });
-          
-          
+
+
      </script>
-     
+
 </body>
 </html>
