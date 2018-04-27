@@ -16,7 +16,7 @@ if(isset($_POST['action'])) {
     if($category == "Natural Disaster") {
         echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
     } else {
-        echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
+        echo "<script type='text/javascript'>  window.location='subCategoryTestMm.php?id=".$employee_id."'; </script>";
     }
 
 }
