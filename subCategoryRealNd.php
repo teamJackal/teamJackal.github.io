@@ -58,7 +58,7 @@ if(isset($_POST['submit'])) {
 
 <div id="body" style="margin-bottom: -5%;" class="container-fluid">
   <div class="container">
-    <h1 class="text-center">TEST SYSTEM-Natural Disaster</h1>
+    <h1 class="text-center">REAL SYSTEM-Natural Disaster</h1>
     <p class="text-center"> Select a sub-category</p>
   </div>
   <div>
@@ -68,7 +68,7 @@ if(isset($_POST['submit'])) {
       <button id="tsunamiButton" type="submit" name="submit" value="Tsunami" class="btn btn-block btn-info">Tsunami</button>
       <button id="hurricaneButton" type="submit" name="submit" value="Hurricane" class="btn btn-block btn-info">Hurricane</button>
       <button id="flashFloodButton" type="submit" name="submit" value="Flash Flood" class="btn btn-block btn-info ">Flash Flood</button>
-      <button id="earthquakeButton" type="submit" name="submit" value="Earthquake" class="btn btn-info btn-block">Earthquake</button>
+      <button id="wildfireButton" type="submit" name="submit" value="Wildfire" class="btn btn-info btn-block">Wildfire</button>
   </form>
   </div>
 </div>
