@@ -4,10 +4,12 @@
 
 $employee_id = $_GET['id'];
 
-$sql = "SELECT * FROM `employee_log` WHERE `employee_id` = '".$employee_id."' AND WHERE `timestamp` < (NOW() - INTERVAL 30 MINUTE)";
+$sql = "SELECT * FROM `employee_log` WHERE `employee_id` = '".$employee_id."' AND `lastUpdated` < (NOW() - INTERVAL 30 MINUTE) AND `sent` = 1";
 echo $sql;
 $sel = $pdo->prepare($sql);
 $sel->execute();
+$result = $sel->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +37,32 @@ $sel->execute();
 
 <div class="container">
   <h1 class="text-center">Cancel Alert</h1>
+</div>
+
+<div class="container center">
+	<div id="live_data"></div>
+	<?
+	echo
+	"<table border='0' cellpadding='0' cellspacing='0' line-height='22 px' align='center'>
+	<tr>
+		<th class='category'>Category</th>
+		<th class='subcategory'>Sub-category</th>
+		<th class='warningType'>Warning Type</th>
+		<th class='environmentType'>Environment Type</th>
+    <th class='warningMessage'>Warning Message</th>
+		<th class='delete'>Delete</th>
+	</tr>"
+	;
+	foreach($result as $row) {
+		echo "<tr>";
+		echo "<td id='building'>$row['category']</td>";
+		// echo "<td class='floor' onBlur=\"saveToDatabase(this,'floor', $row_id)\" contenteditable='true'>" . $row['floor'] . "</td>";
+		// echo "<td class='lastCheck'>" . $row['lastCheck'] . "</td>";
+		// echo "<td class='notes' onBlur=\"saveToDatabase(this,'notes', $row_id)\" contenteditable='true'>" . $row['notes'] . "</td>";
+		// echo "<td class='alnright'><a href='delete.php?id=".$row['id']."&name=".$row['building']."'>" . "x" . "</a></td>";
+		echo "</tr>";
+	}
+	?>
 </div>
 
 </html>
