@@ -9,14 +9,14 @@ if(isset($_POST['action'])) {
     $employee_id = $_POST['url_id'];
     $environment_type = 'test';
 
-    $sql = "INSERT INTO `employee_log` (`category`, `employee_id`, `environmentType`) VALUES ('".$category."', '".$employee_id."', '"$environment_type"')";
-    //echo $sql;
+    $sql = "INSERT INTO `employee_log` (`category`, `employee_id`, `environmentType`) VALUES ('".$category."', '".$employee_id."', '".$environment_type."')";
+    echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
     if($category == "Natural Disaster") {
-        echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
+    //    echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
     } else {
-        echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
+    //    echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
     }
 
 }
