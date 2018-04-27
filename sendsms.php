@@ -1,7 +1,8 @@
 <?php include('awssnsconnect.php'); ?>
 
 <?php
-   function sendsms($message) {
+   function sendsms($message, $params) {
+     $sns = new \Aws\Sns\SnsClient($params);
      $args = array(
           "SenderID" => "TestMessage",
           "SMSType" => "Promotional",
@@ -12,5 +13,5 @@
       $result = $sns->publish($args);
    }
 
-//   sendsms("hello");
+   sendsms("hello", $params);
 ?>
