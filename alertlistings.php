@@ -1,7 +1,8 @@
+<?php include('connect.php'); ?>
 <?
 $employee_id = $_GET['id'];
 
-$sql = "SELECT * FROM `books`";
+$sql = "SELECT * FROM `employee_log` WHERE `employee_id` = '".$employee_id."'";
 echo $sql;
 $sel = $pdo->prepare($sql);
 $sel->execute();
