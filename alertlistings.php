@@ -14,6 +14,9 @@
     line-height: 22px;
     padding: 40px;
   }
+  #tablecontainer {
+    margin-top: 50px;
+  }
 </style>
 
 <?php
@@ -51,7 +54,7 @@ $result = $sel->fetchAll();
   </button>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid name="tablecontainer">
 	<div id="live_data"></div>
 	<?php
 	echo
