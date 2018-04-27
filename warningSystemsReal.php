@@ -2,6 +2,13 @@
 <?php
 $employee_id = $_GET['id'];
 
+$sql = "SELECT sub_category FROM 414jackal.employee_log ORDER BY `lastUpdated` DESC LIMIT 1";
+$sel = $pdo->prepare($sql);
+$sel->execute();
+$result = $sel->fetchAll();
+$result = $result[0];
+$category = $result['sub_category'];
+
 if(isset($_POST['confirmButton'])) {
     
     $employee_id = $_POST['url_id'];
@@ -53,11 +60,13 @@ if(isset($_POST['confirmButton'])) {
 
   <form action="warningSystemsReal.php" method="POST">
     <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>	
-  <button data-toggle="buttons" id="hide" type="button" class="btn btn-block btn-info toggle">
-    <input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="warningSirens">
-    <span><img class="icon glyphicon pull-left" src="images/siren.png"></span>
-    Warning Sirens
-  </button>
+  <?php if($category == 'Tsunami' || $category == 'Missile'){
+  echo '<button data-toggle="buttons" id="hide" type="button" class="btn btn-block btn-info toggle">';
+  echo '<input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="warningSirens">';
+  echo '<span><img class="icon glyphicon pull-left" src="images/siren.png"></span>';
+  echo 'Warning Sirens';
+  echo '</button>';
+  } ?>
   <button data-toggle="buttons" type="button" class="btn btn-block btn-info toggle clicked">
     <input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="textMessage">
     <span><img class="icon glyphicon pull-left" src="images/phone.png"></span>
