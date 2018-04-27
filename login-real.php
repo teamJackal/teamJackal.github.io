@@ -13,6 +13,10 @@ if(isset($_POST['Submit'])) {
     //$result = $sel->fetchAll();
     while($res = $sel->fetch(PDO::FETCH_ASSOC)){
         $id = $res['employee_id'];
+        $sql2 = "DELETE FROM `employee_log` WHERE `category` is NULL OR `sub_category` is NULL or `warningType` is NULL or `environmentType` is NULL or `warningMessage` is NULL or `lastUpdated` is NULL or `employee_id` is NULL or `sent` = 0";
+        $sel2 = $pdo->prepare($sql2);
+        $sel2->execute();
+
         echo "<script type='text/javascript'>  window.location='MainCategoryReal.php?id=".$id."'; </script>";
     }
 }

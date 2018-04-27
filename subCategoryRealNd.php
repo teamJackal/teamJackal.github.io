@@ -66,7 +66,7 @@ if(isset($_POST['submit'])) {
       <input type="hidden" name="action" value="submit" />
       <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
       <button id="tsunamiButton" type="submit" name="submit" value="Tsunami" class="btn btn-block btn-info">Tsunami</button>
-      <button id="hurricaneButton" type="submit" name="submit" value="Hurricane" class="btn btn-block btn-info">Hurricane</button>
+      <button id="tornadoButton" type="submit" name="submit" value="Tornado" class="btn btn-block btn-info">Tornado</button>
       <button id="flashFloodButton" type="submit" name="submit" value="Flash Flood" class="btn btn-block btn-info ">Flash Flood</button>
       <button id="wildfireButton" type="submit" name="submit" value="Wildfire" class="btn btn-info btn-block">Wildfire</button>
   </form>

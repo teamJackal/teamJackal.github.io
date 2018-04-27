@@ -27,6 +27,11 @@ if(isset($_POST['confirmButton'])) {
 
     echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
 }
+
+if(isset($_POST['back-button'])) {
+  $employee_id = $_POST['url_id'];
+  echo "<script type='text/javascript'>  window.location='MainCategoryReal.php?id=$employee_id'; </script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,9 +51,12 @@ if(isset($_POST['confirmButton'])) {
     <img class="img-responsive fluid" src="images/Header.png">
     <div id="header-text">HAWAII EMERGENCY ALERT SYSTEM</div>
   </div>
+  <form action="warningSystemsReal.php" method="POST">
+  <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
   <button id="back-button" onclick="window.location.href='MainCategoryTest.php'" type="button" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> BACK
   </button>
+  </form>
 </div>
 
 
@@ -83,11 +91,6 @@ if(isset($_POST['confirmButton'])) {
     Audio & Visual Warning - TV
   </button>
 
-
-  <div id="message">
-      <h2>Enter a message:</h2>
-  <textarea name="warningMessage" id="warningMessage" rows="4" cols="50">
-  </textarea></div>
   <div class="container text-center">
     <button id="confirmButton" name="confirmButton" type="submit" class="btn btn-default">Confirm</button>
     <button id="cancelButton" name="cancelButton" onclick="window.location.href='MainCategoryTest.html'" type="submit" class="btn btn-default">Cancel</button>
@@ -97,7 +100,7 @@ if(isset($_POST['confirmButton'])) {
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script>
-          $(document).ready(function(){
+         /* $(document).ready(function(){
               $("#message").hide();
               $(".clicked").click(function(){
                 $("#message").show();
@@ -105,7 +108,7 @@ if(isset($_POST['confirmButton'])) {
               $("#hide").click(function(){
                   $("#message").hide();
                 });
-        });
+        });*/
 
 
      </script>
