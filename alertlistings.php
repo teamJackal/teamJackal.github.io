@@ -50,7 +50,7 @@ $result = $sel->fetchAll();
 		<th class='warningType'>Warning Type</th>
 		<th class='environmentType'>Environment Type</th>
     <th class='warningMessage'>Warning Message</th>
-		<th class='delete'>Delete</th>
+		<th class='delete'>Delete</th>  
 	</tr>";
 
 	?>
