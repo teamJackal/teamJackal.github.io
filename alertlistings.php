@@ -1,4 +1,5 @@
 <?php include('connect.php'); ?>
+
 <?
 
 $employee_id = $_GET['id'];
@@ -7,6 +8,7 @@ $sql = "SELECT * FROM `employee_log`";
 echo $sql;
 ?>
 
+<!DOCTYPE html>
 <html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,3 +34,5 @@ echo $sql;
 <div class="container">
   <h1 class="text-center">Cancel Alert</h1>
 </div>
+
+</html>
