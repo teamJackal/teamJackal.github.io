@@ -15,6 +15,7 @@
     padding: 40px;
   }
 </style>
+
 <?php
 
 $employee_id = $_GET['id'];
@@ -51,11 +52,8 @@ $result = $sel->fetchAll();
 </div>
 
 <div class="container-fluid">
-<?php
-
-<div class="container-fluid">
 	<div id="live_data"></div>
-	<?
+	<?php
 	echo
 	"<table border='0' cellpadding='0' cellspacing='0' line-height='22 px' align='center'>
 	<tr>
@@ -78,8 +76,6 @@ $result = $sel->fetchAll();
 		echo "</tr>";
 	}
 	?>
-</div>
-?>
 </div>
 
 </html>
