@@ -101,7 +101,7 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
       <script>
 
       function checkButton() {
-        if(document.getElementById("warning").style.display = 'none') {
+        if(document.getElementById("warning").style.display == "none") {
           $("#confirmButton").hide();
         }
       }
