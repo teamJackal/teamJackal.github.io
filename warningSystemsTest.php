@@ -91,7 +91,7 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
   </button>
 
   <div class="container text-center">
-    <div id="hideConfirm"><button id="confirmButton" name="confirmButton" type="submit" class="btn btn-default">Confirm</button></div>
+    <button id="confirmButton" name="confirmButton" type="submit" class="btn btn-default">Confirm</button>
     <button id="cancelButton" name="cancelButton"  type="submit" class="btn btn-default">Cancel</button>
   </div>
   </form>
@@ -99,23 +99,17 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script>
-         /* $(document).ready(function(){
-              $("#message").hide();
+
+          $(document).ready(function(){
+              $("#confirmButton").hide();
               $(".clicked").click(function(){
                 $("#message").show();
               });
               $("#hide").click(function(){
                   $("#message").hide();
                 });
-        });*/
-        $(document).on("click", function(e) {
-          if($(e.target).is("#warning")) {
-            $("#hideConfirm").show();
-          }
-          else {
-            $("#hideConfirm").hide();
-          }
-        }
+        });
+
 
      </script>
 
