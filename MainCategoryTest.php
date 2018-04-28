@@ -9,7 +9,8 @@ if(isset($_POST['action'])) {
     $employee_id = $_POST['url_id'];
     $environment_type = '0';
 
-    $sql = "INSERT INTO `employee_log` (`category`, `employee_id`, `environmentType`) VALUES ('".$category."', '".$employee_id."', '".$environment_type."')";
+  //  $sql = "INSERT INTO `employee_log` (`category`, `employee_id`, `environmentType`) VALUES ('".$category."', '".$employee_id."', '".$environment_type."')";
+    $sql = "UPDATE `employee_log` SET `category` = '".$category."', `environment_type` = '".$environment_type"' WHERE `employee_id` = '".$employee_id"' LIMIT ONE ORDER BY ASC ");
     //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
