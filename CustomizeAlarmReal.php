@@ -1,11 +1,17 @@
-<?php include('connect.php'); ?>
+<?php
+    //ini_set('display_errors', 'On');
+    //error_reporting(E_ALL);
+    include('connect.php');
+    include('warningMessage.php');
+?>
+
 <?php
 
 function removeNull($array) {
     if($array[0] != ' '){
         $new_array = array($array[0]);
         foreach(array_slice($array,1) as $element){
-            if($element != ''){
+            if($element != ' '){
                 array_push($new_array, $element);
                 echo "Done";
             }
@@ -66,7 +72,7 @@ $needEnd = checkEndType($category);
 $needMessage = checkTypes($types);
 $needArrival = checkArrivalType($category);
 
-if($needLoc){
+/*if($needLoc){
 echo "<p>Need Location for $category";
 }
 if($needEnd){
@@ -74,7 +80,7 @@ echo "<p>Need End Time for $category";
 }
 if($needMessage){
 echo "<p>Need Message<p>";
-}
+}*/
 
 if(!$needMessage){
     if($category == 'tsunami'){
@@ -87,7 +93,7 @@ if(!$needMessage){
     $sel = $pdo->prepare($sql);
     $sel->execute();
     echo $warningMessage;
-    //echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
+    echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
 }
 
 if(isset($_POST['confirmButton'])) {
@@ -98,15 +104,15 @@ if(isset($_POST['confirmButton'])) {
     $arrivalTime = $_POST['arrivalTime'];
     $endTime = $_POST['endTime'];
     $customMessage = $_POST['customMessage'];
-    
-    $warningMessage = getMessage($category, $location, $arrivalTime, $endTime, $customMessage);
+
+    $warningMessage =  getMessage($category, $location, $arrivalTime, $endTime, $customMessage);
 
     $sql = "UPDATE `employee_log` SET `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
     //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
     echo $warningMessage;
-    //echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
+    echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
 }
 
 if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
@@ -133,7 +139,7 @@ if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
     <img class="img-responsive fluid" src="images/HeaderBad.png">
     <div id="header-text">HAWAII EMERGENCY ALERT SYSTEM</div>
   </div>
-  <form action="CustomizeAlarmTest.php" method="POST">
+  <form action="CustomizeAlarmReal.php" method="POST">
   <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
   <button id="back-button" name="back-button-customTest" type="submit" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> BACK
@@ -143,7 +149,7 @@ if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
 
 <div id="body" class="container center">
 <div class="thumbnail text-center">
-<form action="CustomizeAlarmTest.php" method="POST">
+<form action="CustomizeAlarmReal.php" method="POST">
 <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
 <input type="hidden" name="category" value=<?php echo $category ?>>
 

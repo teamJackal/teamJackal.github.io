@@ -1,4 +1,9 @@
-<?php include('connect.php'); ?>
+<?php
+    ini_set('display_errors', 'On');
+    error_reporting(E_ALL);
+    include('connect.php');
+    include('warningMessage.php');
+?>
 <?php
 
 function removeNull($array) {
@@ -7,7 +12,6 @@ function removeNull($array) {
         foreach(array_slice($array,1) as $element){
             if($element != ''){
                 array_push($new_array, $element);
-                echo "Done";
             }
         }
         return $new_array;
@@ -16,11 +20,10 @@ function removeNull($array) {
 }
 
 function checkLocType($category){
-    $state = TRUE;
-    if($category == 'Tsunami' || $category == 'Missile' || 'Amber Alert'){
-        $state = FALSE;
+    if($category == 'Tsunami' || $category == 'Missile' || $category == 'Amber Alert'){
+        return FALSE;
     }
-    return $state;
+    return TRUE;
 }
 
 function checkArrivalType($category){
@@ -38,6 +41,7 @@ function checkEndType($category){
 }
 
 function checkTypes($types){
+    echo $types[0];
     if(count($types) == 1){
         if($types[0] == 'warningSirens'){
             return FALSE;
@@ -65,8 +69,7 @@ $needLoc = checkLocType($category);
 $needEnd = checkEndType($category);
 $needMessage = checkTypes($types);
 $needArrival = checkArrivalType($category);
-
-if($needLoc){
+/*if($needLoc){
 echo "<p>Need Location for $category";
 }
 if($needEnd){
@@ -74,7 +77,7 @@ echo "<p>Need End Time for $category";
 }
 if($needMessage){
 echo "<p>Need Message<p>";
-}
+}*/
 
 if(!$needMessage){
     $warningMessage = 1;
@@ -102,8 +105,8 @@ if(isset($_POST['confirmButton'])) {
     //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
-    echo $warningMessage;
-    //echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
+    //echo $warningMessage;
+    echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
 }
 
 if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
