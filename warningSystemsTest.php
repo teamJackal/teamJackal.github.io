@@ -103,11 +103,8 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
           $(document).ready(function(){
               $("#confirmButton").hide();
               $(".clicked").click(function(){
-                $("#message").show();
+                $("#confirmButton").show();
               });
-              $("#hide").click(function(){
-                  $("#message").hide();
-                });
         });
 
 
