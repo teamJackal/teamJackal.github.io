@@ -106,6 +106,7 @@ if(isset($_POST['confirmButton'])) {
     $customMessage = $_POST['customMessage'];
 
     $warningMessage =  getMessage($category, $location, $arrivalTime, $endTime, $customMessage);
+    if($warningMessage != null) {
 
     $sql = "UPDATE `employee_log` SET `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
     //echo $sql;
@@ -113,6 +114,7 @@ if(isset($_POST['confirmButton'])) {
     $sel->execute();
     echo $warningMessage;
     echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
+  }
 }
 
 if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
