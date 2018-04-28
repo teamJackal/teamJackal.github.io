@@ -1,5 +1,3 @@
-<?php include('awssnsconnect.php'); ?>
-
 <?php
    function sendsms($message, $params) {
      $sns = new \Aws\Sns\SnsClient($params);
