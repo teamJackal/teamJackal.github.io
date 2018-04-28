@@ -1,7 +1,7 @@
 <?php include('connect.php'); ?>
 
 <?php
-function toTypes($types){
+/*function toTypes($types){
     $output = ' ';
     foreach($types as $type){
         if($type == 'tv'){ $output += 'TV '; }
@@ -9,17 +9,17 @@ function toTypes($types){
         if($type == 'radio'){ $output += 'RADIO '; }
         if($type == 'warningSirens'{ $output += 'SIRENS'; }
     }
-}
+}*/
 
 $employee_id = $_GET['id'];
 
-$sql = "SELECT * FROM sub_category, warningType, warningMessage WHERE username = '".$username."' AND password = '".$password."' LIMIT 1";
+$sql = "SELECT sub_category, warningType, warningMessage 414jackal.employee_log ORDER BY `lastUpdated` DESC LIMIT 1";
 $sel = $pdo->prepare($sql);
 $sel->execute();
 $outputs = $sel->fetchAll();
 $outputs = $outputs[0];
 $category = $outputs['sub_category'];
-$types = toTypes(explode(',', $outputs['warningType']));
+//$types = toTypes(explode(',', $outputs['warningType']));
 $message = $outputs['warningMessage'];
 
 if(isset($_POST['submit'])) {
@@ -77,8 +77,9 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
 <div id="message" class="container center">
   <div class="thumbnail text-center">
   <?php
+    $category = strtoupper($category);
     echo "<h1>TEST MESSAGE FOR $category</h1>";
-    echo "<h2>USING $types</h2>";
+    //echo "<h2>USING $types</h2>";
     echo "<h2>$message</h2>";
   ?>
   </div>
