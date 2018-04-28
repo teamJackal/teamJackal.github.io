@@ -77,7 +77,7 @@ echo "<p>Need Message<p>";
     echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
 }*/
 
-if(isset($_POST['back-button-customTest'])) {
+if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
   $id = $_POST['url_id'];
   echo "<script type='text/javascript'>  window.location='warningSystemsTest.php?id=$id'; </script>";
 }
@@ -109,5 +109,32 @@ if(isset($_POST['back-button-customTest'])) {
   </form>
 </div>
 
+<form action="CustomizeAlarmTest.php" method="POST">
+<input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
+
+<?php
+if($needMessage){
+    if($needLoc){
+        echo "<div id='messagelocation'>
+                  <h2>LOCATION:
+                      <textarea name='location' id='location' rows='1' cols='50'></textarea>
+                  </h2>
+              </div>";
+    }
+    if($needEnd){
+        echo "<div id='messagelocation'>
+                  <h2>END TIME:
+                      <textarea name='endTime' id='endTime' rows='1' cols='50'></textarea>
+                  </h2>
+              </div>";
+    }
+    echo "<div class='container text-center'>
+              <button id='confirmButton' name='confirmButton' type='submit' class='btn btn-default'>Confirm</button>
+              <button id='cancelButton' name='cancelButton' type='submit' class='btn btn-default'>Cancel</button>
+          </div>"
+}
+?>
+
+</form>
 </body>
 </html>
