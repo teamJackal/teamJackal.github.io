@@ -1,7 +1,18 @@
 <?php include('connect.php'); ?>
 
 <?php
+function toTypes($types){
+    $output = ' ';
+    foreach($types as $type){
+        if($type == 'tv'){ $output += 'TV '; }
+        if($type == 'textMessage'){ $output += 'SMS '; }
+        if($type == 'radio'){ $output += 'RADIO '; }
+        if($type == 'warningSirens'{ $output += 'SIRENS'; }
+    }
+}
 
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
 $employee_id = $_GET['id'];
 
 $sql = "SELECT * FROM sub_category, warningType, warningMessage WHERE username = '".$username."' AND password = '".$password."' LIMIT 1";

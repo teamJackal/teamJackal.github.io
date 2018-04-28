@@ -1,6 +1,15 @@
 <?php include('connect.php'); ?>
 
 <?php
+function toTypes($types){
+    $output = ' ';
+    foreach($types as $type){
+        if($type == 'tv'){ $output += 'TV '; }
+        if($type == 'textMessage'){ $output += 'SMS '; }
+        if($type == 'radio'){ $output += 'RADIO '; }
+        if($type == 'warningSirens'{ $output += 'SIRENS'; }
+    }
+}
 
 $employee_id = $_GET['id'];
 
