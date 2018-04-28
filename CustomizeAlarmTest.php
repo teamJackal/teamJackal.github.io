@@ -109,6 +109,8 @@ if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
   </form>
 </div>
 
+<div id="body" class="container center">
+<div class="thumbnail text-center">
 <form action="CustomizeAlarmTest.php" method="POST">
 <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
 
@@ -116,25 +118,29 @@ if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
 if($needMessage){
     if($needLoc){
         echo "<div id='messagelocation'>
-                  <h2>LOCATION:
-                      <textarea name='location' id='location' rows='1' cols='50'></textarea>
+                  <h3>LOCATION:</h3>
+                  <h2>
+                      <textarea style='resize: none; border-radius: 5px;' name='location' id='location' rows='1' cols='50'></textarea>
                   </h2>
               </div>";
     }
     if($needEnd){
         echo "<div id='messagelocation'>
-                  <h2>END TIME:
-                      <textarea name='endTime' id='endTime' rows='1' cols='50'></textarea>
+                  <h3>END TIME:</h3>
+                  <h2>
+                      <textarea style='resize: none;' name='endTime' id='endTime' rows='1' cols='50'></textarea>
                   </h2>
               </div>";
     }
     echo "<div class='container text-center'>
               <button id='confirmButton' name='confirmButton' type='submit' class='btn btn-default'>Confirm</button>
               <button id='cancelButton' name='cancelButton' type='submit' class='btn btn-default'>Cancel</button>
-          </div>"
+          </div>";
 }
 ?>
 
 </form>
+</div>
+</div>
 </body>
 </html>
