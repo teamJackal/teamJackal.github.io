@@ -24,7 +24,7 @@
 $employee_id = $_GET['id'];
 $sent_value = "1";
 
-$sql = "SELECT * FROM `employee_log` WHERE `employee_id` = '".$employee_id."' AND (`lastUpdated` > (NOW() - INTERVAL 30 MINUTE)) AND `sent` = '".$sent_value"'";
+$sql = "SELECT * FROM `employee_log` WHERE `employee_id` = '".$employee_id."' AND (`lastUpdated` > (NOW() - INTERVAL 30 MINUTE)) AND `sent` = '".$sent_value."'";
 //echo $sql;
 $sel = $pdo->prepare($sql);
 $sel->execute();
