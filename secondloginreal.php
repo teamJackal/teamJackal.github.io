@@ -28,7 +28,9 @@ if(isset($_POST['submit'])) {
         
         $id = $res['employee_id'];
         //change redirect
-        echo "<script type='text/javascript'>  window.location='secondlogintest.php?id=".$id."'; </script>";
+        if($employee_id != $id){
+            echo "<script type='text/javascript'>  window.location='MessageSent.php?id=".$id."'; </script>";
+        }
     }
 }
 
@@ -48,14 +50,14 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-<body style="background: #95C19B;">
+<body style="background: #EAABAB;">
 
-<div id="header" class="container-fluid" style="background-color: #233C15 !important;">
+<div id="header" class="container-fluid" style="background-color: #C6401B !important;">
   <div class="container-fluid text-center">
-    <img class="img-responsive fluid" src="images/Header.png">
+    <img class="img-responsive fluid" src="images/HeaderBad.png">
     <div id="header-text">HAWAII EMERGENCY ALERT SYSTEM</div>
   </div>
-  <form action="checklogintest.php" method="POST">
+  <form action="secondloginreal.php" method="POST">
   <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
   <button id="back-button" name="back-button" type="submit" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> BACK
@@ -63,7 +65,7 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
   </form>
 </div>
 
-<h1 class="text-center">Message to be sent:</h1>
+<h1 class="text-center">Message to be sent (Please have another person review):</h1>
 
 <div id="message" class="container center">
   <div class="thumbnail text-center">
@@ -77,7 +79,7 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
 
 <div id="body" class="container center">
   <div class="thumbnail text-center">
-    <form action="checklogintest.php" method="POST">
+    <form action="secondloginreal.php" method="POST">
       <div class="form-group">
         <label for="exampleInputEmail1">Username</label>
         <input type="email" id="username" name="username" class="form-control" placeholder="Enter email">

@@ -1,10 +1,17 @@
-<?php include('sendsms.php'); ?>
-<?php include('sendmail.php'); ?>
 <?php include('connect.php'); ?>
 
 <?php
 
 $employee_id = $_GET['id'];
+
+$sql = "SELECT * FROM sub_category, warningType, warningMessage WHERE username = '".$username."' AND password = '".$password."' LIMIT 1";
+$sel = $pdo->prepare($sql);
+$sel->execute();
+$outputs = $sel->fetchAll();
+$outputs = $outputs[0];
+$category = $outputs['sub_category'];
+$types = toTypes(explode(',', $outputs['warningType']));
+$message = $outputs['warningMessage'];
 
 if(isset($_POST['submit'])) {
     
@@ -21,8 +28,13 @@ if(isset($_POST['submit'])) {
         
         $id = $res['employee_id'];
         //change redirect
-        echo "<script type='text/javascript'>  window.location='MessageSent.php?id=".$id."'; </script>";
+        echo "<script type='text/javascript'>  window.location='secondloginreal.php?id=".$id."'; </script>";
     }
+}
+
+if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
+  $id = $_POST['url_id'];
+  echo "<script type='text/javascript'>  window.location='CustomizeAlarmReal.php?id=$id'; </script>";
 }
 ?>
 
@@ -43,17 +55,23 @@ if(isset($_POST['submit'])) {
     <img class="img-responsive fluid" src="images/HeaderBad.png">
     <div id="header-text">HAWAII EMERGENCY ALERT SYSTEM</div>
   </div>
-  <button id="back-button" onclick="window.location.href='index.html'" type="button" class="btn btn-default btn-lg">
+  <form action="checkloginreal.php" method="POST">
+  <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
+  <button id="back-button" name="back-button" type="submit" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> BACK
   </button>
+  </form>
 </div>
 
 <h1 class="text-center">Message to be sent:</h1>
 
 <div id="message" class="container center">
   <div class="thumbnail text-center">
-    <h1>[WARNING TYPE]:</h1>
-    <h2>[Warning message to be sent out.]</h2>
+  <?php
+    echo "<h1>TEST MESSAGE FOR $category</h1>";
+    echo "<h2>USING $types</h2>";
+    echo "<h2>$message</h2>";
+  ?>
   </div>
 </div>
 
@@ -71,7 +89,7 @@ if(isset($_POST['submit'])) {
       </div>
       <!--<button type="submit" class="btn btn-primary">Login</button>-->
       <!--This button below will be temporary>-->
-      <button type="submit" class="btn btn-primary">Cancel</button>
+      <button type="submit" name="cancelButton" class="btn btn-primary">Cancel</button>
       <button type="submit" name="submit" id="submit" style="display: inline-block;" class="btn btn-primary">Confirm</button>
     </form>
   </div>
