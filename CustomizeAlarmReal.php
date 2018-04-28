@@ -24,7 +24,7 @@ function checkLocType($category){
 }
 
 function checkArrivalType($category){
-    if($category == 'Tsunami' || $category == 'Tornado'){
+    if($category == 'Tsunami'){
         return TRUE;
     }
     return FALSE;
@@ -39,7 +39,7 @@ function checkEndType($category){
 
 function checkTypes($types){
     if(count($types) == 1){
-        if($types[0] == 'siren'){
+        if($types[0] == 'warningSirens'){
             return FALSE;
         }
     }
@@ -77,29 +77,36 @@ echo "<p>Need Message<p>";
 }
 
 if(!$needMessage){
-    $warningMessage = 1;
-
+    if($category == 'tsunami'){
+        $warningMessage = 1;
+    } else {
+        $warningMessage = 2;
+    }
     $sql = "UPDATE `employee_log` SET `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
     //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
-
-    echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
+    echo $warningMessage;
+    //echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
 }
 
 if(isset($_POST['confirmButton'])) {
 
     $employee_id = $_POST['url_id'];
+    $category = $_POST['category'];
     $location = $_POST['location'];
     $arrivalTime = $_POST['arrivalTime'];
     $endTime = $_POST['endTime'];
+    $customMessage = $_POST['customMessage'];
+    
+    $warningMessage = getMessage($category, $location, $arrivalTime, $endTime, $customMessage);
 
     $sql = "UPDATE `employee_log` SET `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
     //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
-
-    echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
+    echo $warningMessage;
+    //echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
 }
 
 if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
@@ -119,7 +126,7 @@ if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<body style="background: #95C19B;">
+<body style="background: #EAABAB;">
 
 <div id="header" style="background-color: #C6401B !important;" class="container-fluid">
   <div class="container-fluid text-center">
@@ -138,6 +145,7 @@ if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
 <div class="thumbnail text-center">
 <form action="CustomizeAlarmTest.php" method="POST">
 <input type="hidden" name="url_id" value=<?php echo $employee_id ?>>
+<input type="hidden" name="category" value=<?php echo $category ?>>
 
 <?php
 if($needMessage){
@@ -151,7 +159,7 @@ if($needMessage){
     }
     if($needArrival){
         echo "<div id='messageArrival'>
-                  <h3>ARRIVAL TIME:</h3>
+                  <h3>ARRIVAL TIME IN HOURS(S):</h3>
                   <h2>
                       <textarea name='arrivalTime' id='arrivalTime' rows='1' cols='50' placeholder='Time Until Arrival'></textarea>
                   </h2>
@@ -162,6 +170,14 @@ if($needMessage){
                   <h3>END TIME:</h3>
                   <h2>
                       <textarea name='endTime' id='endTime' rows='1' cols='50' placeholder='End Time'></textarea>
+                  </h2>
+              </div>";
+    }
+    if($category == 'Amber Alert'){
+        echo "<div id='messageEnd'>
+                  <h3>CUSTOM MESSAGE:</h3>
+                  <h2>
+                      <textarea name='customMessage' id='customMessage' rows='1' cols='50' placeholder='Message'></textarea>
                   </h2>
               </div>";
     }
