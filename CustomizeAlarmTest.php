@@ -78,7 +78,7 @@ echo "<p>Need End Time for $category";
 if($needMessage){
 echo "<p>Need Message<p>";
 }*/
-
+ 
 if(!$needMessage){
     $warningMessage = 1;
 
@@ -98,8 +98,9 @@ if(isset($_POST['confirmButton'])) {
     $arrivalTime = $_POST['arrivalTime'];
     $endTime = $_POST['endTime'];
     $customMessage = $_POST['customMessage'];
-    
+
     $warningMessage = getMessage($category, $location, $arrivalTime, $endTime, $customMessage);
+    if($warningMessage != null) {
 
     $sql = "UPDATE `employee_log` SET `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
     //echo $sql;
@@ -107,6 +108,7 @@ if(isset($_POST['confirmButton'])) {
     $sel->execute();
     //echo $warningMessage;
     echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
+  }
 }
 
 if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
