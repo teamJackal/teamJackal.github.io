@@ -74,17 +74,17 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
   echo 'Warning Sirens';
   echo '</button>';
   } ?>
-  <button data-toggle="buttons" id="warning" type="button" class="btn btn-block btn-info toggle clicked">
+  <button data-toggle="buttons" onclick="checkButton()" id="warning" type="button" class="btn btn-block btn-info toggle clicked">
     <input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="textMessage">
     <span><img class="icon glyphicon pull-left" src="images/phone.png"></span>
     Text Message
   </button>
-  <button data-toggle="buttons" id="warning" type="button" class="btn btn-block btn-info toggle clicked">
+  <button data-toggle="buttons" onclick="checkButton()" id="warning" type="button" class="btn btn-block btn-info toggle clicked">
     <input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="radio">
     <span><img class="icon glyphicon pull-left" src="images/radio.png"></span>
     Audio Warning - Radio
   </button>
-  <button data-toggle="buttons" id="warning" type="button" class="btn btn-info btn-block toggle clicked">
+  <button data-toggle="buttons" onclick="checkButton()" id="warning" type="button" class="btn btn-info btn-block toggle clicked">
     <input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="tv">
     <span><img class="icon glyphicon pull-left" src="images/tv.png"></span>
     Audio & Visual Warning - TV
@@ -100,6 +100,11 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script>
 
+      function checkButton() {
+        if(document.getElementById("warning").style.display = 'none') {
+          $("#confirmButton").hide();
+        }
+      }
           $(document).ready(function(){
               $("#confirmButton").hide();
               $(".clicked").click(function(){
