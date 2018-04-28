@@ -19,7 +19,7 @@ if(isset($_POST['confirmButton'])) {
 
     $warning_types = $warningSirens . "," . $textMessage . "," . $radio . "," . $tv;
 
-    $sql = "UPDATE `employee_log` SET `warningType` = '".$warning_types."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` ASC LIMIT 1 ";
+    $sql = "UPDATE `employee_log` SET `warningType` = '".$warning_types."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
     //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
