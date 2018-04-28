@@ -44,7 +44,7 @@ function checkTypes($types){
         }
     }
     if(count($types) == 0){
-        echo "<script type='text/javascript'>  window.location='warningSystemsTest.php?id=$id'; </script>";
+        echo "<script type='text/javascript'>  window.location='warningSystemsReal.php?id=$id'; </script>";
     }
     return TRUE;
 }
@@ -84,7 +84,7 @@ if(!$needMessage){
     $sel = $pdo->prepare($sql);
     $sel->execute();
 
-    echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
+    echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
 }
 
 if(isset($_POST['confirmButton'])) {
@@ -97,12 +97,12 @@ if(isset($_POST['confirmButton'])) {
     $sel = $pdo->prepare($sql);
     $sel->execute();
 
-    echo "<script type='text/javascript'>  window.location='checklogintest.php?id=".$employee_id."'; </script>";
+    echo "<script type='text/javascript'>  window.location='checkloginreal.php?id=".$employee_id."'; </script>";
 }
 
 if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
   $id = $_POST['url_id'];
-  echo "<script type='text/javascript'>  window.location='warningSystemsTest.php?id=$id'; </script>";
+  echo "<script type='text/javascript'>  window.location='warningSystemsReal.php?id=$id'; </script>";
 }
 
 ?>
@@ -119,9 +119,9 @@ if(isset($_POST['back-button-customTest']) || isset($_POST['cancelButton'])) {
 
 <body style="background: #95C19B;">
 
-<div id="header" style="background-color: #233C15 !important;" class="container-fluid">
+<div id="header" style="background-color: #C6401B !important;" class="container-fluid">
   <div class="container-fluid text-center">
-    <img class="img-responsive fluid" src="images/Header.png">
+    <img class="img-responsive fluid" src="images/HeaderBad.png">
     <div id="header-text">HAWAII EMERGENCY ALERT SYSTEM</div>
   </div>
   <form action="CustomizeAlarmTest.php" method="POST">

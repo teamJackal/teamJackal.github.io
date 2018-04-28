@@ -1,0 +1,16 @@
+textarea{
+    resize: none;
+    border-radius: 5px;
+}
+
+.body{
+    margin-top: 5%;
+}
+
+.confirmButton{
+    background-color: LightCoral;
+}
+
+.cancelButton{
+    background-color: LightGreen;
+}

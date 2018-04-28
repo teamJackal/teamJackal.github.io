@@ -27,7 +27,7 @@ if(isset($_POST['confirmButton'])) {
     echo "<script type='text/javascript'>  window.location='CustomizeAlarmTest.php?id=".$employee_id."'; </script>";
 }
 
-if(isset($_POST['back-button'])) {
+if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
   $employee_id = $_POST['url_id'];
   echo "<script type='text/javascript'>  window.location='MainCategoryTest.php?id=$employee_id'; </script>";
 }
@@ -92,7 +92,7 @@ if(isset($_POST['back-button'])) {
 
   <div class="container text-center">
     <button id="confirmButton" name="confirmButton" type="submit" class="btn btn-default">Confirm</button>
-    <button id="cancelButton" name="cancelButton" onclick="window.location.href='MainCategoryTest.html'" type="submit" class="btn btn-default">Cancel</button>
+    <button id="cancelButton" name="cancelButton"  type="submit" class="btn btn-default">Cancel</button>
   </div>
   </form>
 </div>
