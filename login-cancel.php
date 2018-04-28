@@ -46,7 +46,7 @@ if(isset($_POST['Submit'])) {
 </div>
 
 <div class="container">
-  <h1 class="text-center">Cancel Alert</h1>
+  <h1 class="text-center">Confirm Cancel Alert</h1>
 </div>
 
 <div id="body" class="container center">

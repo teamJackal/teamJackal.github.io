@@ -75,7 +75,7 @@ $result = $sel->fetchAll();
 		echo "<td class='warningType'>" . $row['warningType'] . "</td>";
 		echo "<td class='environmentType'>" . $row['environmentType'] . "</td>";
     echo "<td class='warningMessage'>" . $row['warningMessage'] . "</td>";
-		echo "<td class='alnright'><a href='delete.php?id=".$row['id']."&name=".$row['building']."'>" . "x" . "</a></td>";
+		echo "<td class='alnright'><a href='delete.php?id=".$row['id']."'>" . "x" . "</a></td>";
 		echo "</tr>";
 	}
 	?>
