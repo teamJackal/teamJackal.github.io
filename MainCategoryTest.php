@@ -12,14 +12,14 @@ if(isset($_POST['action'])) {
 
   //  $sql = "INSERT INTO `employee_log` (`category`, `employee_id`, `environmentType`) VALUES ('".$category."', '".$employee_id."', '".$environment_type."')";
 
-    $sql = "UPDATE `employee_log` SET `category` = '".$category."', `environment_type` = '".$environment_type."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` ASC LIMIT 1 ";
-    echo $sql;
+    $sql = "UPDATE `employee_log` SET `category` = '".$category."', `environmentType` = '".$environment_type."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` ASC LIMIT 1 ";
+    //echo $sql;
     $sel = $pdo->prepare($sql);
     $sel->execute();
     if($category == "Natural Disaster") {
-      //  echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
+        echo "<script type='text/javascript'>  window.location='subCategoryTestNd.php?id=".$employee_id."'; </script>";
     } else {
-    //    echo "<script type='text/javascript'>  window.location='subCategoryTestMm.php?id=".$employee_id."'; </script>";
+        echo "<script type='text/javascript'>  window.location='subCategoryTestMm.php?id=".$employee_id."'; </script>";
     }
 
 }
