@@ -1,6 +1,8 @@
 <?php include('connect.php'); ?>
 <?php include('sendmail.php'); ?>
 <?php include('sendsms.php'); ?>
+<?php include('awssnsconnect.php'); ?>
+
 <?php
 
 $column_id = $_GET['id'];
@@ -18,8 +20,8 @@ if($result) {
   $sql = "UPDATE `employee_log` SET `sent` = '".$unsent."' WHERE `id` = '".$column_id."' LIMIT 1 ";
   $sel = $pdo->prepare($sql);
   $sel->execute();
-  sendmail($mail, 'FALSE ALARM', 'False Alarm', 'The last warning, was alarm' , 'herm8888@hawaii.edu');
-  sendsms($result);
+  sendmail($mail, 'FALSE ALARM', 'False Alarm', 'The last warning, was a false alarm. Please disregard the previous warning.' , 'herm8888@hawaii.edu');
+  sendsms('The last warning, was a false alarm. Please disregard the previous warning.', $params);
   echo "<script type='text/javascript'>  window.location='index.html'; </script>";
 }
 ?>
