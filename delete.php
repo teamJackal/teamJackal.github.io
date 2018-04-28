@@ -6,7 +6,7 @@
 <?php
 
 $column_id = $_GET['id'];
-$unsent = '2';
+$unsent = "2";
 $username = $_POST['username'];
 $password = $_POST['password'];
 
