@@ -91,7 +91,7 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
   </button>
 
   <div class="container text-center">
-    <button id="confirmButton" name="confirmButton" type="submit" class="btn btn-default">Confirm</button>
+    <div id="hideConfirm"><button id="confirmButton" name="confirmButton" type="submit" class="btn btn-default">Confirm</button></div>
     <button id="cancelButton" name="cancelButton"  type="submit" class="btn btn-default">Cancel</button>
   </div>
   </form>
@@ -110,10 +110,10 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
         });*/
         $(document).on("click", function(e) {
           if($(e.target).is("#warning")) {
-            $("#confirmButton").show();
+            $("#hideConfirm").show();
           }
           else {
-            $("#confirmButton").hide();
+            $("#hideConfirm").hide();
           }
         }
 
