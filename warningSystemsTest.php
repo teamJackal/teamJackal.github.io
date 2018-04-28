@@ -110,6 +110,9 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
               $(".clicked").click(function(){
                 $("#confirmButton").show();
               });
+              $("#hide").click(function(){
+                $("#confirmButton").show();
+              })
 
         });
 
