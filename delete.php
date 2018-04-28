@@ -17,12 +17,14 @@ $sel->execute();
 $result = $sel->fetchAll();
 
 if($result) {
+
   $sql = "UPDATE `employee_log` SET `sent` = '".$unsent."' WHERE `id` = '".$column_id."' LIMIT 1 ";
+  echo $sql;
   $sel = $pdo->prepare($sql);
   $sel->execute();
-  sendmail($mail, 'FALSE ALARM', 'False Alarm', 'The last warning, was a false alarm. Please disregard the previous warning.' , 'herm8888@hawaii.edu');
-  sendsms('The last warning, was a false alarm. Please disregard the previous warning.', $params);
-  echo "<script type='text/javascript'>  window.location='index.html'; </script>";
+  //sendmail($mail, 'FALSE ALARM', 'False Alarm', 'The last warning, was a false alarm. Please disregard the previous warning.' , 'herm8888@hawaii.edu');
+  //sendsms('The last warning, was a false alarm. Please disregard the previous warning.', $params);
+  //echo "<script type='text/javascript'>  window.location='index.html'; </script>";
 }
 ?>
 
