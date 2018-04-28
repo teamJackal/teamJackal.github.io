@@ -1,8 +1,8 @@
 <?php include('connect.php'); ?>
 
 <?php
-ini_set('display_errors', 'On');
-error_reporting(E_ALL);
+//ini_set('display_errors', 'On');
+//error_reporting(E_ALL);
 /*function toTypes($types){
     $output = ' ';
     foreach($types as $type){
