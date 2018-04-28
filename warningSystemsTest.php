@@ -74,17 +74,17 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
   echo 'Warning Sirens';
   echo '</button>';
   } ?>
-  <button data-toggle="buttons" type="button" class="btn btn-block btn-info toggle clicked">
+  <button data-toggle="buttons" id="warning" type="button" class="btn btn-block btn-info toggle clicked">
     <input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="textMessage">
     <span><img class="icon glyphicon pull-left" src="images/phone.png"></span>
     Text Message
   </button>
-  <button data-toggle="buttons" type="button" class="btn btn-block btn-info toggle clicked">
+  <button data-toggle="buttons" id="warning" type="button" class="btn btn-block btn-info toggle clicked">
     <input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="radio">
     <span><img class="icon glyphicon pull-left" src="images/radio.png"></span>
     Audio Warning - Radio
   </button>
-  <button data-toggle="buttons" type="button" class="btn btn-info btn-block toggle clicked">
+  <button data-toggle="buttons" id="warning" type="button" class="btn btn-info btn-block toggle clicked">
     <input class="check" type="checkbox" name="var_id[]" autocomplete="off" value="tv">
     <span><img class="icon glyphicon pull-left" src="images/tv.png"></span>
     Audio & Visual Warning - TV
@@ -108,7 +108,14 @@ if(isset($_POST['back-button']) || isset($_POST['cancelButton'])) {
                   $("#message").hide();
                 });
         });*/
-
+        $(document).on("click", function(e) {
+          if($(e.target).is("#warning")) {
+            $("#confirmButton").show();
+          }
+          else {
+            $("#confirmButton").hide();
+          }
+        }
 
      </script>
 
