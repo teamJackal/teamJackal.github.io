@@ -1,11 +1,11 @@
-
+<?php include('connect.php'); ?>
 <!-- <?php include('sendmail.php'); ?> -->
 
 <?php
   include 'sendsms.php';
 
 ?>
-<?
+<?php
 
 $employee_id = $_GET['id'];
 $sent_value = "1";
