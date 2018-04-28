@@ -90,7 +90,9 @@ if(!$needMessage){
 if(isset($_POST['confirmButton'])) {
 
     $employee_id = $_POST['url_id'];
-    $warningMessage = $_POST['warningMessage'];
+    $location = $_POST['location'];
+    $arrivalTime = $_POST['arrivalTime'];
+    $endTime = $_POST['endTime'];
 
     $sql = "UPDATE `employee_log` SET `warningMessage` = '".$warningMessage."' WHERE `employee_id` = '".$employee_id."' ORDER BY `lastUpdated` DESC LIMIT 1 ";
     //echo $sql;
